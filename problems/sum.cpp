@@ -4,18 +4,16 @@
 
 #include "sum.hpp"
 
-// Initialize the parser for the sum problem
+
 void SumProblem::initialize_parser(cxxopts::Options &options) {
     options.add_options()
         ("sum", "Sum the numbers in the input file");
 }
 
-// Check if the sum problem is chosen
 bool SumProblem::is_chosen_problem(const cxxopts::ParseResult &args) {
     return args.count("sum") > 0;
 }
 
-// Run the sum problem
 int SumProblem::run(const cxxopts::ParseResult &args) {
     std::string inputFilename = args["input"].as<std::string>();
     std::string outputFilename = args["output"].as<std::string>();

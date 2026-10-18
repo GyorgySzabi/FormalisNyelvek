@@ -63,9 +63,8 @@ THE SOFTWARE.
 
 #ifndef CXXOPTS_NO_REGEX
 #include <regex>
-#endif // CXXOPTS_NO_REGEX
+#endif 
 
-// Nonstandard before C++17, which is coincidentally what we also need for <optional>
 #ifdef __has_include
 #if __has_include(<optional>)
 #include <optional>

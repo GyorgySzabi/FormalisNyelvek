@@ -1,18 +1,17 @@
+#include "cxxopts.hpp"
+#include "problems/determinize.hpp"
+#include "problems/dfa.hpp"
+#include "problems/sum.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
 
-#include "cxxopts.hpp"
-
-// Add your own problems here
-#include "problems/dfa.hpp"
-#include "problems/sum.hpp"
-
 int runProblem(int argc, char *argv[]) {
-  // Add your own problems here
+
   std::vector<Problem *> problems;
   problems.push_back(new SumProblem());
   problems.push_back(new DfaProblem());
+  problems.push_back(new DeterminizeProblem());
 
   cxxopts::Options options("project", "Run the specific problem");
 

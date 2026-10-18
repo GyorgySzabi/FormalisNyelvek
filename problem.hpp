@@ -11,4 +11,4 @@ public:
     virtual int run(const cxxopts::ParseResult &args) = 0;
 };
 
-#endif // PROBLEM_HPP
+#endif 
