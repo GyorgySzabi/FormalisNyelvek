@@ -1,6 +1,7 @@
 #include "cxxopts.hpp"
 #include "problems/determinize.hpp"
 #include "problems/dfa.hpp"
+#include "problems/minimize.hpp"
 #include "problems/sum.hpp"
 #include <iostream>
 #include <string>
@@ -12,6 +13,7 @@ int runProblem(int argc, char *argv[]) {
   problems.push_back(new SumProblem());
   problems.push_back(new DfaProblem());
   problems.push_back(new DeterminizeProblem());
+  problems.push_back(new MinimizeProblem());
 
   cxxopts::Options options("project", "Run the specific problem");
 
