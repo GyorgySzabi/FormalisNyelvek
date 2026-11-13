@@ -61,7 +61,7 @@ std::vector<std::string> solveTask1(std::ifstream &inputFile) {
   static const std::regex reTagExoPlayer(R"(ExoPlayer)", flags);
   static const std::regex reLevelEW(R"([EW])", flags);
   static const std::regex reJavaPos(R"(\.java:)", flags);
-  static const std::regex reThread(R"(Thread)", flags);
+  static const std::regex reThread(R"(\bThread\b)", flags);
 
   const std::regex &lineRegex = logcatLineRegex();
   const std::regex &reLevelE = errorLevelRegex();
