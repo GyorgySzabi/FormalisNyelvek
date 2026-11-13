@@ -2,6 +2,7 @@
 #include "problems/determinize.hpp"
 #include "problems/dfa.hpp"
 #include "problems/minimize.hpp"
+#include "problems/regex.hpp"
 #include "problems/sum.hpp"
 #include <iostream>
 #include <string>
@@ -9,11 +10,15 @@
 
 int runProblem(int argc, char *argv[]) {
 
-  std::vector<Problem *> problems;
-  problems.push_back(new SumProblem());
-  problems.push_back(new DfaProblem());
-  problems.push_back(new DeterminizeProblem());
-  problems.push_back(new MinimizeProblem());
+  SumProblem sumProblem;
+  DfaProblem dfaProblem;
+  DeterminizeProblem determinizeProblem;
+  MinimizeProblem minimizeProblem;
+  RegexProblem regexProblem;
+
+  std::vector<Problem *> problems = {&sumProblem, &dfaProblem,
+                                     &determinizeProblem, &minimizeProblem,
+                                     &regexProblem};
 
   cxxopts::Options options("project", "Run the specific problem");
 
@@ -30,8 +35,7 @@ int runProblem(int argc, char *argv[]) {
 
   for (Problem *p : problems) {
     if (p->is_chosen_problem(args)) {
-      p->run(args);
-      return 0;
+      return p->run(args);
     }
   }
 
