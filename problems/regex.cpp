@@ -15,7 +15,7 @@ const std::regex &logcatLineRegex() {
   // Captures: [1]=timestamp, [2]=PID, [3]=TID, [4]=level,
   // [5]=tag, [6]=optional message (allowing empty messages after ": ").
   static const std::regex pattern(
-      R"(^([0-9-]+ [0-9:.]+) +([0-9]+) +([0-9]+) ([IDVEFAW]) ([^\r]+?):(?: ([^\r]*))?\r?$)",
+      R"(^([0-9-]+ [0-9:.]+) +([0-9]+) +([0-9]+) ([IDVEFAWS]) ([^\r]+?):(?: ([^\r]*))?\r?$)",
       std::regex::ECMAScript | std::regex::optimize);
   return pattern;
 }
